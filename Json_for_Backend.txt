@@ -1,0 +1,112 @@
+Postman
+
+Create Event with list of tracks
+#Events
+Post
+http://localhost:8080/event
+
+#Ohne InstrumentList
+{
+    "event": {
+        "eventName": "mainzFest",
+        "eventDatum":"2021-12-23",
+        "eventOrt": "Mainz",
+        "eventDeadline": "2021-12-23",
+	"auftritt": true,
+        "tracks": [
+            {
+                "tid": 1,
+                "trackName": "folkMusic",
+                "trackCategory": "volk" 
+            },
+            {
+                "tid": 2,
+                "trackName": "LP",
+                "trackCategory": "Historisch" 
+
+            }
+        ]
+    }
+}
+#Mit InstrumentList
+{
+    "event": {
+        "eventName": "mainzFest",
+        "eventDatum":"2021-12-23",
+        "eventOrt": "Mainz",
+        "eventDeadline": "2021-12-23",
+	"auftritt": true,
+        "tracks": [
+            {
+                "tid": 1,
+                "trackName": "folkMusic",
+                "trackCategory": "volk" 
+            },
+            {
+                "tid": 2,
+                "trackName": "LP",
+                "trackCategory": "Historisch",
+		"instruments": [
+            	{
+                	"iid": 1,
+                	"instrumentName": "Accordion" 
+            	},
+            	{
+                	"iid": 2,
+                	"instrumentName": "Piano" 
+
+            	}
+        	] 
+            }
+        ]
+    }
+}
+__________________________________________________________________________
+Crate Tracks with instruments 
+#Tracks
+
+Post
+http://localhost:8080/track
+
+{
+    "track": {
+        "tid": 1,
+        "trackName": "SadPiano ",
+        "trackCategory": "volk", 
+        "instruments": [
+            {
+                "iid": 1,
+                "instrumentName": "Accordion" 
+            },
+            {
+                "iid": 2,
+                "instrumentName": "Piano" 
+
+            }
+        ]
+    }
+}
+
+__________________________________________________________________________
+
+
+__________________________________________________________________________
+Create Person
+#Person
+
+Post
+http://localhost:8080/person
+
+{
+        "vorname": "m1",
+        "nachname": "ki",
+	"alter": 23,
+	"telefon": "0192323422", 
+        "mail": "m1ki@gmail.com",
+        "passwort": "12345",
+	"dirigent": false,
+	"musikant": true,
+        "chef": "true"
+}
+
+__________________________________________________________________________
